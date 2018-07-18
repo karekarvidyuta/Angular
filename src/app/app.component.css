@@ -1,0 +1,26 @@
+.mycolor{
+    color:red;
+  }
+  .mysize{
+    height: 30px;
+    width: 100px;
+    font-style: italic;
+  }
+  .makemebold{
+    font-weight: bold;
+  }
+  table{
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  
+  }
+  td{
+    border: 1px solid red;
+    padding: 5px;
+  }
+  th{
+    border: 1px solid red;
+    padding: 5px;
+  }
+  

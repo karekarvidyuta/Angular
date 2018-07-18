@@ -1,0 +1,231 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<!--<h2>NgIf Example </h2>
+
+<label>Enter Age: </label>
+<input class="form-control" type="text" value="ENTER AGE "
+ [(ngModel)]="age"/><br><br>
+
+<div *ngIf="age>20; then old "></div>
+<div *ngIf="age<20 && age>0; then young "></div>
+<div *ngIf="age==0 then nothing"></div><br>
+
+  <ng-template #old>
+      You are too "old" because you are {{age}} Year old
+  </ng-template>
+
+  <ng-template #young>
+      You Are "young" because you are {{age}} Year old 
+  </ng-template>
+
+  <h2>NgFor And NgSwitch Example </h2>
+
+<select [(ngModel)]="selectedValue">
+    <option *ngFor="let person of myperson;" [value]="person.name">
+      {{person.name}}</option>
+</select><br><br>
+
+<div class='row' [ngSwitch]="selectedValue">
+   Varible selectedValue is change to {{selectedValue}}<br><br>
+    <div *ngSwitchCase="'Vidyuta'">'Vidyuta' is Pressed</div>
+    <div *ngSwitchCase="'Pooja'">'Pooja' is Selected</div>
+    <div *ngSwitchCase="'nothing'">'nothing' is Selected</div>
+    <div *ngSwitchDefault>Default Option</div>
+</div>
+
+<h1>List Of Course</h1>
+<ul>
+    <li *ngFor="let course of courses">{{ course.name }}</li>
+</ul>
+<br>
+    
+<h1>Add and Remove </h1>
+    <button (click)="addCourse()">Add</button>
+
+<ul>
+        <li *ngFor="let course of courses; even as isEven">
+            {{ course.name }}<!--<span *ngIf="isEven">(even)</span>
+            <button (click)="onRemove()">Remove</button>
+        </li>
+    </ul>
+-->
+
+
+<!--<p>Form Demo</p>
+<form action="#" class="form-horizontal">
+    <div class="form-group" >
+        <label for="inputfname" class="control-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="Enter Name" required />
+    </div>
+    <div class="form-group">
+        <label for="inputemail" class="control-label">Select Option</label>
+        <select>
+          <option value ="sydney">Sydney</option>
+          <option value ="melbourne">Melbourne</option>
+          <option value ="cromwell" selected>Cromwell</option>
+          <option value ="queenstown">Queenstown</option>
+       </select>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" required="" />Remember me</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">submit</button>
+    </div>
+</form>-->
+
+<h4>NgIf Example </h4>
+<h2>{{title}}</h2>
+<label>Enter Age: </label>
+<input class="form-control" type="text" value="ENTER AGE "
+ [(ngModel)]="age"/><br><br>
+
+<div *ngIf="age>20; then old "></div>
+<div *ngIf="age<20 && age>0; then young "></div>
+<div *ngIf="age==0 then nothing"></div><br>
+
+  <ng-template #old>
+      You are too "old" because you are {{age}} Year old
+  </ng-template>
+
+  <ng-template #young>
+      You Are "young" because you are {{age}} Year old 
+  </ng-template>
+
+  <ng-template #nothing>
+     *Please Enter Your Age
+  </ng-template>
+<p>------------------------------------------------------------</p>
+<h4>NgSwitch Example </h4>
+
+<select [(ngModel)]="selectedValue">
+    <option *ngFor="let person of myperson;" [value]="person.name">
+      {{person.name}}</option>
+</select><br><br>
+
+<div class='row' [ngSwitch]="selectedValue">
+   Varible selectedValue is change to {{selectedValue}}<br><br>
+    <div *ngSwitchCase="'Vidyuta'">'Vidyuta' is Pressed</div>
+    <div *ngSwitchCase="'Aakash'">'Aakash' is Selected</div>
+    <div *ngSwitchCase="'nothing'">'nothing' is Selected</div>
+    <div *ngSwitchDefault>Default Option</div>
+</div>
+
+<p>------------------------------------------------------------</p>
+<h4>Example for ngFor</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody >
+  <tr *ngFor="let person of myperson;">
+    <td>{{person.name}}</td>
+    <td>{{person.val}}</td>
+  </tr>
+
+  </tbody>
+  
+</table>
+
+
+<p>------------------------------------------------------------</p>
+<!--class binding-->
+<h4>Example for Class Binding</h4>
+<p>For remove Existing Class while Adding New Class</p>
+<button class="mycolor" [class]='makemestyle'>Click here</button>
+
+<br>
+<br>
+<p>For Add and Remove Single Class</p>
+
+<button class="mycolor makemebold mysize " [class.mysize]='makemetrue'>Click here</button>
+
+
+<br>
+<br>
+<p>For Add and remove Multiple class based on condition</p>
+
+<button class="mycolor makemebold mysize " [ngClass]="{makemebold: makemetrue, mysize: !makemetrue}" >Click here</button>
+
+<p>------------------------------------------------------------</p>
+<!--Style binding-->
+<h4>Example for Style Binding</h4>
+
+<p>To bind single inline style </p>
+
+<p style="color:red" [style.background-color]="mybackgroundcolor?'yellow':'pink'">Look My background Changes</p>
+
+<p>To bind single inline style for property having value in "px" </p>
+<p style="color:red" [style.background-color]="mybackgroundcolor?'yellow':'pink'" [style.font-size.px]="myfontsize" >Look My font size Change</p>
+
+<p>To bind multiple inline style use ngStyle </p>
+
+
+<p style="color:red" [style.background-color]="mybackgroundcolor?'yellow':'pink'" [style.font-size.px]="myfontsize" [ngStyle]="addstyle()" >Look My font style Change</p>
+
+<p>method 2: To bind multiple inline style use ngStyle without function call </p> 
+<p style="color:red" [style.background-color]="mybackgroundcolor?'yellow':'pink'" [style.font-size.px]="myfontsize" [ngStyle]=" { 'font-style':this.myfontstyle?                         'italic':'normal'} " >Look My font style Change</p>
+
+
+
+
+
+
+
+<!--<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div>
+        <label for="firstname">firstname</label>
+        <input required minlength="3" maxlength="10" pattern="banana" ngModel name="firstname" #firstname="ngModel" (change)="log(firstname)">
+        <div class="alert alert-danger" *ngIf="!firstname.valid">
+            <div *ngIf="firstname.errors.reqired">First name is required</div>
+            <div *ngIf="firstname.errors.minlength">First name is max 3 char</div>
+            <div *ngIf="firstname.errors.pattern">Does not matched pattern</div>
+            
+        </div>
+    </div>
+</form>-->
+<p>Form Demo</p>
+<form action="#" class="form-horizontal">
+  <div  *ngFor='let input of data' class="form-group">
+    <div *ngIf='(input.type=="text")'>
+      <label for="inputfname" class="control-label">{{input.label}}</label>
+      <input [type]="input.type" [class]="input.css_class" [id]="input.id" [placeholder]="input.placeholder" [required]="input.req.required"/>
+    </div>
+    <div *ngIf='(input.type=="textarea")'>
+        <label for="inputfname" class="control-label">{{input.label}}</label>
+        <input [type]="input.type" [class]="input.css_class" [id]="input.id" [placeholder]="input.placeholder" [required]="input.req.required"/>
+      </div>
+      <div *ngIf='(input.type=="integer")'>
+        <label for="inputfname" class="control-label">{{input.label}}</label>
+        <input [type]="input.type" [class]="input.css_class" [id]="input.id" [placeholder]="input.placeholder" [required]="input.req.required"/>
+      </div>
+      <div *ngIf='(input.type=="time")'>
+        <label for="inputfname" class="control-label">{{input.label}}</label>
+        <input [type]="input.type" [class]="input.css_class" [id]="input.id" [placeholder]="input.placeholder" [required]="input.req.required"/>
+      </div>
+      <div *ngIf='(input.type=="date")'>
+        <label for="inputfname" class="control-label">{{input.label}}</label>
+        <input [type]="input.type" [class]="input.css_class" [id]="input.id" [placeholder]="input.placeholder" [required]="input.req.required"/>
+      </div>
+
+      <div *ngIf='(input.type =="choice")'>
+        <label >{{input.label}}</label>
+        <select class=" {{input.css_class }}  form-control" [id]='input.id'  [name]='input.name'>
+        <option selected>Select Option</option>
+        <option *ngFor='let a of input.req.choices;let i = index' >{{input.req.choices[i]}}</option>
+        </select>
+        </div>
+  </div>
+  <div class="form-group">
+      <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+</form>
+
+    
